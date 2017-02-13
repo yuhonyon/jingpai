@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/common.css">
+<script>
+	$(function(){
+		var loadind=0;
+		var imgind=0;
+		var loadsum=$("img").length;
+		var loadtimer=setInterval(function(){
+			if(loadind<100){
+				loadind++;
+				$("#baifen").html(loadind);
+			}
+			else{
+				clearInterval(loadtimer);
+			}
+		},50)
+		$("img").each(function(){
+			$(this).attr("src",$(this).attr("data-src")).load(function(){
+				imgind++;
+				if(loadind<=parseInt(imgind/loadsum*100)){
+					loadind=parseInt(imgind/loadsum*100)
+					$("#baifen").html(loadind);
+				}
+				else{
+					clearInterval(loadtimer);
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<div class="loading">
+		<div><span id="baifen">0</span>%</div>
+	</div>
+
+	<audio  id="audio"  loop="loop" autoplay="autoplay">
+      <source src="x4.ogg" type="audio/ogg">    
+      <source src="x4.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music"></div>
+
+	<div class="wrap">
+		<section class='s1 color1'>
+		<div class="menba"></div>
+		<div class="men"><img data-src="images/con1_1.jpg" alt="" class="autoimg"></div>
+		<div class="tishi"><img data-src="images/tishi.png" alt="" class="autoimg"></div>
+		<div class="con1"><img data-src="images/con1.jpg" alt="" class="autoimg"></div>
+		<div class="con1_head"><img data-src="images/2015.png" alt="" class="autoimg"></div>
+		<div class="con1_head2"><img data-src="images/20152.png" alt="" class="autoimg"><img data-src="images/chakan.png" alt="" class="chakan"></div>
+		<div class="wenhao"><img data-src="images/wenhao.png" alt="" class="autoimg"></div>
+		<div class="hand"><img data-src="images/hand.png" alt="" class="autoimg"></div>
+		<div class="guang"></div>
+		<div class="ren">
+			<i style="display:none" class="kan"></i>
+			<i style="display:none" class="pao"></i>
+			<i style="display:none" class="pao2"></i>
+			<i style="display:none" class="zhuan1"></i>
+			<i style="display:none" class="zhuan2"></i>
+		</div>
+	</section>
+	
+	<section style="display:none;" class='s2 color1'>
+		<div style='' class="con2_1"><img data-src="images/con2_1.png" alt="" class="autoimg"></div>
+		<div style='' class="con2_2"><img data-src="images/con2_2.png" alt="" class="autoimg"></div>
+		<div style='' class="con2_3"><img data-src="images/con2_3.png" alt="" class="autoimg"></div>
+		<div style='' class="con2_4"><img data-src="images/con2_4.png" alt="" class="autoimg"></div>
+		<div style='' class="con2_5"><img data-src="images/con2_5.png" alt="" class="autoimg"></div>
+		<div style='' class="con2_6"><img data-src="images/con2_6.png" alt="" class="autoimg"></div>
+		<div class="con2"><img data-src="images/bg.jpg" alt="" class="autoimg"></div>
+		<div class="ren3">
+			<i style="display:none" class="pao"></i>
+			<i style="display:none" class="kan"></i>
+			<i style="display:none" class="taitou"></i>
+			<i style="display:none" class="gaoxing"></i>
+			<i style="display:none" class="gaoxing2"></i>
+			<i style="display:none" class="gaoxing3"></i>
+		</div>
+	
+		<div class="con3">
+			<div class="con3_0"><img data-src="images/bg2.jpg" alt="" class="autoimg"></div>
+			<div class="con3_1" style="display:none;"><img data-src="images/con3_1.png" alt="" class="autoimg"></div>
+			<div class="con3_2" style="display:none;"><img data-src="images/con3_2.png" alt="" class="autoimg"></div>
+			<div class="con3_3" style="display:none;"><img data-src="images/con3_3.png" alt="" class="autoimg"></div>
+			<div class="con3_4" style="display:none;"><img data-src="images/con3_4.png" alt="" class="autoimg"></div>
+			<div class="bu3" style="display:none;"><img data-src="images/bu3.png" alt="" class="autoimg"></div>
+			<div class="con3_5" style="display:none;">
+				<img data-src="images/zhou.png" alt="" class="autoimg">
+				<div class="con3_5_1"><img data-src="images/xiaowenhao.png" alt="" class="autoimg"></div>
+				<div class="con3_5_2"><img data-src="images/xiaowenhao.png" alt="" class="autoimg"></div>
+				<div class="con3_5_3"><img data-src="images/xiaowenhao.png" alt="" class="autoimg"></div>
+			</div>
+			<div class="con3_6" style="display:none;"><img data-src="images/zhou2.png" alt="" class="autoimg"></div>
+			<div class="con3_7" style="display:none;"><img data-src="images/zhou3.png" alt="" class="autoimg"></div>
+			<div class='jiegou' style="display:none;"></div>
+			<div style="display:none;" class="zhiwenkuang"></div>
+			<div style="display:none;" class="zhiwen"><img data-src="images/zhiwen.png" alt="" class="autoimg"></div>
+			<div style="display:none;" class="sao"><img data-src="images/sao.png" alt="" class="autoimg"></div>
+		</div>
+	</section>
+	
+	<section style="display:none;" class='s3 color1'>
+		<div class="con4"><img data-src="images/bg1.jpg" alt="" class="autoimg"></div>
+		<div class="con4_1" style=""><img data-src="images/quan1.png" alt="" class="autoimg"></div>
+		<div class="con4_2" style=""><img data-src="images/quan2.png" alt="" class="autoimg"></div>
+		<div class="con4_3" style=""><img data-src="images/quan3.png" alt="" class="autoimg"></div>
+		<div class="con4_4" style=""><img data-src="images/timu1.png" alt="" class="autoimg"></div>
+		<div style="display:none;" class="con4_5" style=""><img data-src="images/con4_5.png" alt="" class="autoimg"></div>
+		<div style="display:none;" class="con4_6" style=""><img data-src="images/con4_6.png" alt="" class="autoimg"></div>
+		<div style="display:none;" class="con4_7"><img data-src="images/lupai.png" alt="" class="autoimg"></div>
+		<div style="display:none;" class="con4_8"><img data-src="images/con4_8.png" alt="" class="autoimg"></div>
+		<div class="ren4">
+			<i style="display:none" class="taitou"></i>
+			<i style="display:none" class="pao"></i>
+		</div>
+	</section>
+		
+		<section style="display:none;" class='s5 color1'>
+			<div class="slide_box" id="slide_box">
+				<div class='slide active'>
+					<div style="" class="con6_1"><img data-src="images/con6_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con6_1_1"><img data-src="images/con6_1_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con6_2"><img data-src="images/con6_2.png" alt="" class="autoimg"></div>
+					<div style="" class="con6_3"><img data-src="images/bu12.png" alt="" class="autoimg"></div>
+					<div style="" class="con6_4">
+						<img data-src="images/con6_4.png" alt="" class="autoimg">
+						<div class="yaogan"></div>
+						<div class="shuzi1_box"><div class="shuzi1"><img data-src="images/shuzi.png" alt="" class="autoimg"></div></div>
+		    			<div class="shuzi2_box"><div class="shuzi2"><img data-src="images/shuzi.png" alt="" class="autoimg"></div></div>
+					</div>
+				</div>
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div style="" class="con7_1"><img data-src="images/kuo1.png" alt="" class="autoimg"></div>
+					<div style="" class="con7_2"><img data-src="images/con7_2.png" alt="" class="autoimg"></div>
+					<div style="" class="con7_3"><img data-src="images/con7_3.png" alt="" class="autoimg"></div>
+					<div style="display:none;" class="con7_2"><img data-src="images/con7_2.png" alt="" class="autoimg"></div>
+					<div style="display:none;" class="con7_3"><img data-src="images/con7_3.png" alt="" class="autoimg"></div>
+					<div style="" class="bu4"><img data-src="images/bu4.png" alt="" class="autoimg"></div>
+				</div>
+
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div style="" class="con11_1"><img data-src="images/con11_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con11_2"><img data-src="images/con11_2.png" alt="" class="autoimg"></div>
+					<div style="" class="bu2"><img data-src="images/bu1.png" alt="" class="autoimg"></div>
+					<div style="" id="tc_btn" class="con11_3"><img data-src="images/con11_3.png" alt="" class="autoimg"></div>
+					<div style="" class="bu7"><img data-src="images/bu7.png" alt="" class="autoimg"></div>
+				</div>
+
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div style="" class="con8_1"><img data-src="images/con8_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con8_2"><img data-src="images/con8_2.png" alt="" class="autoimg"></div>
+					<div style="" class="bu5"><img data-src="images/bu5.png" alt="" class="autoimg"></div>
+				</div>
+
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div class="join">
+						<div style="" class="con9_1"><img data-src="images/con9_1.png" alt="" class="autoimg"></div>
+						<div style="" class="con9_2"><img data-src="images/con9_2.png" alt="" class="autoimg"></div>
+						<div style="" class="con9_3">
+							<ul class="formul">
+								<li><span class="formname">姓&emsp;名</span><input class="formtxt" type="text"><em>*</em></li>
+								<li><span class="formname">证件号</span><input class="formtxt" type="text"><em>*</em></li>
+								<li><span class="formname">手&emsp;机</span><input class="formtxt" type="text"><em>*</em></li>
+							</ul>
+							<img data-src="images/con9_3_1.png" alt="">
+						</div>
+						<script>
+							$(".formtxt").focus(function(){
+								$(this).parents(".slide").addClass("input")
+							}).blur(function(){
+								$(this).parents(".slide").removeClass("input")
+							})	
+						</script>
+						<div style="" class="con9_4"><button></button></div>
+						<!-- <div style="" class="con9_5">
+							<span class="time_h">00</span>
+							<span class="time_m">00</span>
+							<span class="time_s">00</span>
+							<img data-src="images/con9_5.png" alt="" class="autoimg">
+						</div> -->
+						<div style="" class="bu6"><img data-src="images/bu6.png" alt="" class="autoimg"></div>
+					</div>
+
+					<div class='success' style="display:none;">
+						<div style="" class="con10_1"><img data-src="images/con10_1.png" alt="" class="autoimg"></div>
+						<div style="" class="con10_2"><img data-src="images/con10_2.png" alt="" class="autoimg"></div>
+						<div style="" class="con10_3"><img data-src="images/con10_3.png" alt="" class="autoimg"></div>
+						<div style="" class="bu1"><img data-src="images/bu1.png" alt="" class="autoimg"></div>
+						<div style="" class="con10_4"><a style="display:block:width:100%;" href="tel:02088829990"><img data-src="images/con10_4.png" alt="" class="autoimg"></a></div>
+						<div style="" class="con10_5"><img data-src="images/con10_5.png" alt="" class="autoimg"></div>
+						<div style="" class="bu8"><img data-src="images/bu8.png" alt="" class="autoimg"></div>
+					</div>
+				</div>
+
+					
+
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div style="" class="con13_1"><img data-src="images/con13_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con13_2"><img data-src="images/con13_2.png" alt="" class="autoimg"></div>
+					<div style="" class="con13_3"><img data-src="images/con13_3.png" alt="" class="autoimg"></div>
+					<div style="" class="con13_4"><img data-src="images/con13_4.png" alt="" class="autoimg"></div>
+					<div style="" class="con13_5"><img data-src="images/con13_5.png" alt="" class="autoimg"></div>
+					<div style="" class="bu10"><img data-src="images/bu10.png" alt="" class="autoimg"></div>
+				</div>
+
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div style="" class="con14_1"><img data-src="images/con14_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con14_2"><img data-src="images/con14_2.png" alt="" class="autoimg"></div>
+					<div style="" class="con14_3"><img data-src="images/con14_3.png" alt="" class="autoimg"></div>
+					<div style="" class="con14_4"><img data-src="images/con14_4.png" alt="" class="autoimg"></div>
+					<div style="" class="bu11"><img data-src="images/bu11.png" alt="" class="autoimg"></div>
+				</div>
+
+
+
+				<div class='slide'>
+					<div class='yuan'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div class='yuan_min'>
+						<div style="" class="yuan1"><img data-src="images/yuan1.png" alt="" class="autoimg"></div>
+						<div style="" class="yuan2"><img data-src="images/yuan2.png" alt="" class="autoimg"></div>
+					</div>
+					<div style="" class="kuang"><img data-src="images/kuang.png" alt="" class="autoimg"></div>
+					<div style="" class="con12_1"><img data-src="images/con12_1.png" alt="" class="autoimg"></div>
+					<div style="" class="con12_2">
+						<ul class="jp_per">
+							<li>
+								已经有199人报名
+							</li>
+						</ul>
+						<div class='jp_page'>
+							
+						</div>
+					</div>
+					<div style="" class="con12_3">
+						<a href="javascript:void(0);" class="jp_last"></a>
+						<span>100/100</span>
+						<a href="javascript:void(0);" class="jp_next"></a>
+						<!-- <a href="javascript:void(0);" class="jp_more">更多...</a> -->
+					</div>
+					<div style="display:none;" class="jp_per_box">
+						<ul>勿删</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生1</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生2</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生3</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生4</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生5</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生6</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生7</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生8</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生9</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生0</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生11</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生12</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+						<ul class="jp_per">
+							<li><span class="fl">赵先生13</span><span class="fr">昨天</span></li>
+							<li><span class="fr">11-19</span></li>
+						</ul>
+					</div>
+					<div style="" class="bu9"><img data-src="images/bu9.png" alt="" class="autoimg"></div>
+				</div>
+				
+				<div class="ren2">
+					<i class="pao" style="display:none;"></i>
+					<i class="kan" style="display:none;"></i>
+					<i class="pao2" style="display:none;"></i>
+					<i class="zhuan" style="display:none;"></i>
+					<i class="taitou" style="display:none;"></i>
+					<i class="laotou" style="display:none;"></i>
+					<i class="laotou1" style="display:none;"></i>
+					<i class="gaoxing2" style="display:none;"></i>
+					<i class="tiaowang" style="display:none;"></i>
+				</div>
+				<div class="jian">
+					<span style='display:none;' class="jianLeft"></span>
+					<span style='display:none;' class="jianRight"></span>
+				</div>
+
+			</div>
+			<!-- 弹窗 -->
+			<div class="tc_mengban"></div>
+			<div class="tc_box" style="display:none;">
+			    <div class="tc">
+			        <div class="tc_con">
+			            <img data-src="images/tc.png" alt="" class="autoimg">
+			        </div>
+			    </div>
+			    <div class="tc_tiao_box">
+			        <a href="javascript:void(0)" class="tc_guang"></a>
+			        <div class="tc_tiao">
+			    </div>
+			    </div>
+			</div>
+		</section>
+
+		<i style="display:none" class="fei"></i>
+
+	</div>
+</body>
+<script src="js/common.js"></script>
+</html>

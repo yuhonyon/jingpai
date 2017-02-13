@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/common.css">
+<script>
+	$(function(){
+		var loadind=0;
+		var imgind=0;
+		var loadsum=$("img").length;
+		var loadtimer=setInterval(function(){
+			if(loadind<100){
+				loadind++;
+				$("#baifen").html(loadind);
+			}
+			else{
+				clearInterval(loadtimer);
+			}
+		},50)
+		$("img").each(function(){
+			$(this).attr("src",$(this).attr("data-src")).load(function(){
+				imgind++;
+				if(loadind<=parseInt(imgind/loadsum*100)){
+					loadind=parseInt(imgind/loadsum*100)
+					$("#baifen").html(loadind);
+				}
+				else{
+					clearInterval(loadtimer);
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<div class="loading">
+		<div><span id="baifen">0</span>%</div>
+	</div>
+	<div class="wrap" style="background:url(images/bg1.jpg) 0 0 no-repeat;background-size:100% 100%;">
+		<div class="best"><img src="images/best.png" alt="" class="autoimg"></div>
+		<div class='back2'><img src="images/back2.png" alt="" class="autoimg"></div>
+		<div class="best_1">￥475252</div>
+		<div class="best_2">王 先生/女士</div>
+		<div class="best_3">2015年1月2号13时</div>
+		<button class="best_4"></button>
+		<div style="" class="best_5">
+			<span class="time_h1">00</span>
+			<span class="time_m1">00</span>
+			<span class="time_s1">00</span>
+		</div>
+					
+	</div>
+</body>
+<script>
+$("html").css("fontSize",$(window).width()/160*7+"px");
+$(window).resize(function(){$("html").css("fontSize",$(window).width()/160*7+"px");});
+	function timeFn(){
+		var nowtimeobj=new Date();
+		var nowtime=nowtimeobj.getTime();
+		var endtimeobj=new Date('2015/01/04 23:59:59');
+		var endtime=endtimeobj.getTime();
+		var dtime=endtime-nowtime;
+		$(".time_h1").html(parseInt(dtime/1000/60/60));
+		$(".time_m1").html(parseInt(dtime/1000/60%60));
+		$(".time_s1").html(parseInt(dtime/1000%60));
+		if(dtime<=0){
+			$(".time_h1").html("00");
+			$(".time_m1").html("00");
+			$(".time_s1").html("00");
+			clearInterval(daojishi);
+			return false;
+		}
+	}
+	var daojishi;
+	$(window).load(function(){
+		timeFn();
+		daojishi=setInterval(timeFn,1000);
+		$(".loading").fadeOut(400);
+	})
+</script>
+</html>
